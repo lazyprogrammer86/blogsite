@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 
 
-mongoose.connect("mongodb+srv://admin-adarsh:admin-adarsh@todolist.ibwmb.mongodb.net/blogDB?retryWrites=true", {
+mongoose.connect("mongodb+srv://"+process.env.sub_url+"?retryWrites=true", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
